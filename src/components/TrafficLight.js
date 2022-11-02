@@ -42,7 +42,7 @@ const TrafficLight = () => {
         <div
           key={id}
           className={color.color}
-          style={{ opacity: currentlySelected === id ? 1 : 0.3 }}
+          style={{ opacity: currentlySelected === id ? 1 : 0.4 }}
         ></div>
       ))}
     </div>
