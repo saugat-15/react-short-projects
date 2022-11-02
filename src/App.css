@@ -1,0 +1,19 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80px;
+  width: 30%;
+  border: 1px solid red;
+  background-color: aquamarine;
+}
+
+
+.duplicate{
+  background-color: yellow;
+}
+
+.null{
+  color: black;
+}
