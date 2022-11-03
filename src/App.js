@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Box from "./components/Box";
 import Names from "./components/Names";
 import TrafficLight from "./components/TrafficLight";
+import Fetch from "./components/Fetch";
 
 const App = () => {
   const [count, setCount] = useState(50);
@@ -81,6 +82,7 @@ const App = () => {
       <button onClick={changeStatus}>change status</button> */}
       {/* <Names /> */}
       <TrafficLight />
+      {/* <Fetch /> */}
     {/* </div> */}
       </>
     

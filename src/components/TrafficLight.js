@@ -4,6 +4,7 @@ import "../../src/traffic.css";
 
 const TrafficLight = () => {
   const [currentlySelected, setCurrentlySelected] = useState(0);
+  const [removeEffect, setRemoveEffect] = useState(false);
   const colorArr = [
     {
       color: "green",
@@ -19,21 +20,28 @@ const TrafficLight = () => {
     },
   ];
 
-
   let changeLights = () => {
-    
-      setTimeout(() => {
-        setCurrentlySelected(currentlySelected + 1);
-        if(currentlySelected === 3) setCurrentlySelected(0)
-      }, 2000);
-      // setCurrentlySelected(0);
-    ;
+    setTimeout(() => {
+      setCurrentlySelected(currentlySelected + 1);
+      if (currentlySelected === 3) setCurrentlySelected(0);
+    }, 1000);
+    // setCurrentlySelected(0);z
     // setCurrentlySelected(color.id)
   };
 
+  const resetOpacity = () => {
+    setRemoveEffect(!removeEffect);
+    console.log(removeEffect);
+  };
+
   useEffect(() => {
-    changeLights();
-  }, [currentlySelected]);
+    if (!removeEffect) {
+      changeLights();
+    } else if (removeEffect) {
+      clearTimeout(changeLights);
+      // setCurrentlySelected(4)
+    }
+  }, [currentlySelected, removeEffect]);
 
   console.log(currentlySelected);
   return (
@@ -45,6 +53,14 @@ const TrafficLight = () => {
           style={{ opacity: currentlySelected === id ? 1 : 0.4 }}
         ></div>
       ))}
+
+      <button
+        onClick={() => {
+          resetOpacity();
+        }}
+      >
+        Toggle Opacity
+      </button>
     </div>
   );
 };
