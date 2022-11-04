@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Card from '../components/Card';
-import '../css/card.css'
+import Card from "../components/Card";
+import "../css/card.css";
 
 const Fetch = () => {
   const [name, setName] = useState("");
@@ -15,10 +15,10 @@ const Fetch = () => {
   };
 
   const fetchDbArr = () => {
-    fetch('http://127.0.0.1:3000/products')
-    .then((res) => res.json())
-    .then((data) => setProducts(data))
-  }
+    fetch("http://127.0.0.1:3000/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  };
 
   // console.log(products)
 
@@ -26,7 +26,7 @@ const Fetch = () => {
     const requestOptions = {
       method: "POST",
       body: JSON.stringify({ name, address, password }),
-      headers: {"Content-Type" : "application/json"},
+      headers: { "Content-Type": "application/json" },
     };
     fetch("http://127.0.0.1:3000/register", requestOptions);
   };
@@ -64,9 +64,12 @@ const Fetch = () => {
       </button> */}
       <button onClick={() => fetchDbArr()}>Fetch Data</button>
       <div className="cards">
-      {products.map(product => <Card product={product}/>)}
+        {products.map((product) => (
+          <>
+            <Card product={product} />
+          </>
+        ))}
       </div>
-      
     </div>
   );
 };
