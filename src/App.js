@@ -81,8 +81,8 @@ const App = () => {
     {/* {count}
       <button onClick={changeStatus}>change status</button> */}
       {/* <Names /> */}
-      <TrafficLight />
-      {/* <Fetch /> */}
+      {/* <TrafficLight /> */}
+      <Fetch />
     {/* </div> */}
       </>
     
